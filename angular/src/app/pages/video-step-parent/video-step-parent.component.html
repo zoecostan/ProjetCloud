@@ -1,3 +1,7 @@
 <div class="app-video-step-parent">
-
+<app-video-step1 *ngIf="step == 1" class="video-step-parent-child"
+(indexCardEmitter)="handleCardClick($event)"></app-video-step1>
+<app-video-step2 *ngIf="step == 2" class="video-step-parent-child"
+(backEmitter)="goBackStep1()"
+[object]="currentObject"></app-video-step2>
 </div>

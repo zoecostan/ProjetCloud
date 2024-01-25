@@ -1,1 +1,15 @@
-<p>video-step1 works!</p>
+<div class="app-video-step1">
+  <div class="video-step1-header">
+    <p class="step1-header-title">Séléctionner une vidéo.</p>
+  </div>
+  <div class="video-step1-content">
+    <div class="video-step1-cards">
+      <app-video-preview-card *ngFor="let video of tmpVideosData; let i = index" class="video-step1-card-element"
+      [title]="video.title"
+      [urlMiniature]="video.urlMiniature"
+      [title]="video.title"
+      (click)="handleCardClick(i)"></app-video-preview-card>
+    </div>
+    <div style="height: 200px; width: 1px;"></div>
+  </div>
+</div>

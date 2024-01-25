@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class VideoStepParentComponent {
 
+  step = 1;
+
+  currentObject =     {
+    title: "",
+    urlMiniature: "",
+    length: "",
+    langue: "",
+    animals: false,
+    description: ""
+  };
+
+  handleCardClick(object: any){
+    this.currentObject = object;
+    this.step = 2;
+  }
+
+  goBackStep1(){
+    this.step = 1;
+  }
 }

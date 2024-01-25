@@ -1,0 +1,45 @@
+.app-video-step1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.video-step1-header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.step1-header-title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.video-step1-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-step1-cards{
+width: 1236px;
+  height: fit-content;
+display: flex;
+justify-content: flex-start;
+flex-wrap: wrap;
+}
+
+.video-step1-card-element {
+  margin: 5px;
+}
