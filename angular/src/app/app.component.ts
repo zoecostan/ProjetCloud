@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular';
+
+  page = 1;
+
+  handleMenuPage(index: number){
+    this.page = index;
+  }
 }

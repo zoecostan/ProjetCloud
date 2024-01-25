@@ -8,6 +8,7 @@ import { VideoStepParentComponent } from './pages/video-step-parent/video-step-p
 import { VideoStep1Component } from './pages/video-step-parent/components/video-step1/video-step1.component';
 import { VideoPreviewCardComponent } from './pages/video-step-parent/components/video-step1/video-preview-card/video-preview-card.component';
 import { VideoStep2Component } from './pages/video-step-parent/components/video-step2/video-step2.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { VideoStep2Component } from './pages/video-step-parent/components/video-
     VideoStep1Component,
     VideoPreviewCardComponent,
     VideoStep2Component,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
