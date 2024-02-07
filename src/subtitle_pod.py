@@ -20,7 +20,11 @@ class SubtitlePod:
     def speech_to_srt(self, current_time: datetime.datetime, block_num: int):
         r = sr.Recognizer()
         with sr.AudioFile(self.audio_path) as source:
-            if current_time + datetime.timedelta(seconds=4) < datetime.datetime.fromtimestamp(self.video.duration) - datetime.timedelta(hours=1):
+            if (
+                (current_time.hour*3600 + current_time.minute*60 + current_time.second + 4)
+                < 
+                self.video.duration
+            ):
                 r.adjust_for_ambient_noise(source)
                 offset = current_time.minute*60 + current_time.second + current_time.microsecond/1000000
                 print(str(current_time + datetime.timedelta(seconds=4)) + " -- " + str(datetime.datetime.fromtimestamp(self.video.duration)))
@@ -31,7 +35,11 @@ class SubtitlePod:
                     print("Audio error")
                 except sr.RequestError:
                     print("Request error")
-            elif current_time < datetime.datetime.fromtimestamp(self.video.duration) - datetime.timedelta(hours=1):
+            elif (
+                (current_time.hour*3600 + current_time.minute*60 + current_time.second)
+                < 
+                self.video.duration
+            ):
                 r.adjust_for_ambient_noise(source)
                 offset = current_time.minute*60 + current_time.second + current_time.microsecond/1000000
                 print(str(current_time) + " --- " + str(datetime.datetime.fromtimestamp(self.video.duration)))
@@ -67,5 +75,5 @@ class SubtitlePod:
         self.set_srt_path(srt_filename)
         self.speech_to_srt(datetime.datetime(1970, 1, 1, 0, 0, 0), self.srt_block_num)
 
-subtitle_pod1 = SubtitlePod("ressources\\mp4\\video_resized.mp4", "ressources\\wav\\video_audio.wav")
-subtitle_pod1.create_subtitles("ressources\\txt\\video_subtitles.srt", "ressources\\mp4\\video_subtitled.mp4")
+subtitle_pod1 = SubtitlePod("src\\ressources\\mp4\\video_resized.mp4", "src\\ressources\\wav\\video_audio.wav")
+subtitle_pod1.create_subtitles("src\\ressources\\txt\\video_subtitles.srt", "src\\ressources\\mp4\\video_subtitled.mp4")
