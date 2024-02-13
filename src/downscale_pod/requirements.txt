@@ -1,2 +1,2 @@
 moviepy
-pillow==9.5.0
+pillow==10.2.0
