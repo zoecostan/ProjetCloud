@@ -3,93 +3,45 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  gap: 50px;
 }
 
-.step2-video-viewer {
+.video-step2-header {
   width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-
-
-.step2-video-viewer-title {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.step2-header-title {
+  font-size: 25px;
+  font-weight: 600;
 }
 
-.step2-back-button {
-  width: 100px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  cursor: pointer;
-  gap: 5px;
-
-  img {
-    transform: rotate(180deg);
-  }
-
-  p {
-    font-size: 16px;
-    font-weight: 400;
-  }
-}
-
-.step2-back-button:hover {
-  background-color: #f1f3f1;
-}
-
-.step2-video-viewer-title-text {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  p {
-    font-size: 25px;
-    font-weight: 600;
-  }
-}
-
-.step2-video-viewer-video {
-  width: 640px;
-  height: 360px;
-  overflow: hidden;
-
-  img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  z-index: 1;
-  }
-}
-
-
-.step2-video-data {
+.video-step2-content {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
+  align-items: center;
+  justify-content: center;
 }
 
-.step2-video-data-title {
-  p {
-    font-size: 25px;
-    font-weight: 600;
-  }
+.step2-analyse {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.step2-video-data-content {
-
+.step2-analyse-title {
+  font-size: 25px;
+  font-weight: 600;
 }
