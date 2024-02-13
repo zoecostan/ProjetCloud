@@ -1,3 +1,7 @@
 <div class="app-video-step2">
-<p>{{data[indexOfSelectedFolder].contents}}</p>
+  <p>{{ data[indexOfSelectedFolder].contents }}</p>
+  <video controls>
+    <source [src]="videoUrl" type="video/mp4">
+    Votre navigateur ne supporte pas la balise vidéo.
+  </video>
 </div>
