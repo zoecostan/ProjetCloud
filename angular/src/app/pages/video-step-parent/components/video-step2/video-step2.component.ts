@@ -11,14 +11,10 @@ export class VideoStep2Component {
   backEmitter = new EventEmitter();
 
   @Input()
-  object = {
-    title: "",
-    urlMiniature: "",
-    length: "",
-    langue: "",
-    animals: false,
-    description: ""
-  };
+  data: any[] = [];
+
+  @Input()
+  indexOfSelectedFolder = 1;
 
   goBack() {
     this.backEmitter.emit()
