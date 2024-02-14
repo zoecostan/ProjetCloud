@@ -33,7 +33,11 @@ import csv
 import os
 import platform
 import sys
+import pathlib
 from pathlib import Path
+tmp = pathlib.WindowsPath
+pathlib.WindowsPath = pathlib.PosixPath
+
 import logging
 
 # Configurer le logger
