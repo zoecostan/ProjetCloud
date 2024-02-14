@@ -54,8 +54,8 @@ Notre projet suit l'infrastructure du schéma suivant :
 # Deploiement
 
 ## Docker
-@TODO
-RUN ?????
+
+@TODO COMMENT LE PROF PEUT TESTER ?
 
 ## Site web
 
