@@ -29,7 +29,7 @@ On retrouve alors sur le site web :
 
 Notre projet suit l'infrastructure du schéma suivant :
 
-
+![infrastructure](infrastructure.png)
 
 1. La pipeline vidéo séléctionne d'abord la vidéo présente dans le dossier local spécifié.
 
