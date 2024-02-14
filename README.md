@@ -55,6 +55,18 @@ Notre projet suit l'infrastructure du schéma suivant :
 ## Docker
 
 @TODO COMMENT LE PROF PEUT TESTER ?
+Pour réaliser ce projet, nous avons utilisé Docker pour créer différents conteneurs pour chaque pod d'analyse de la vidéo.
+Ces conteneurs seront utiles pour réaliser la pipeline de traitement de la vidéo.
+On a donc créer 5 conteneurs pour chaque pod, contenant chacun le script pour réaliser le traitement, un fichier Dockerfile qui créé un conteneur et un fichier requirements contenant les différentes librairies nécessaires au lancement des scripts python : 
+    - Downscale : ce conteneur se charge de compresser la vidéo
+    - LangIdent : ce conteneur se charge d'identifier la langue
+    - Subtitle : ce conteneur créé les sous-titres et les ajoute directement sur la vidéo
+    - AnimalDetect : ce conteneur détecte les animaux présents dans la vidéo et les identifie directement dans la vidéo
+    - PushAWS : ce conteneur se charge de mettre la vidéo créée avec les différents traitement dans le bucket AWS
+
+Pour finir, pour lancer la pipeline de ces conteneurs, on a créé un docker compose qui se charge de lancer les pods les uns à la suite des autres.
+
+Pour tester, 
 
 ## Site web
 
