@@ -2,8 +2,7 @@
 
 Projet Cloud ESIR3 - Marine Hilliou, Théo Gravec, Thomas Benalouane, Zoé Costan
 
-Une vidéo démonstration est disponible au lien suivant :
-http://capyangularstorage.s3-website.eu-north-1.amazonaws.com/
+Une vidéo démonstration est disponible au lien suivant : @TODO
 
 # Description
 
@@ -60,7 +59,8 @@ Notre projet suit l'infrastructure du schéma suivant :
 ## Site web
 
 Le site web est disponible au lien suivant :
-@TODO
+
+http://capyangularstorage.s3-website.eu-north-1.amazonaws.com/
 
 # Détail de l'implémentation
 
