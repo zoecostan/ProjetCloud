@@ -76,10 +76,10 @@ class SubtitlePod:
         self.speech_to_srt(datetime.datetime(1970, 1, 1, 0, 0, 0), self.srt_block_num)
 
 
-video_path = "/app/results/video1_resized.mp4"
-audio_path = "/app/results/video1_audio.wav"
-subtitle_path = "/app/results/video1_subtitles.srt"
-video_subtitled_path = "/app/results/video1_subtitled.mp4"
+video_path = "/app/results/capybara_resized.mp4"
+audio_path = "/app/results/capybara_audio.wav"
+subtitle_path = "/app/results/capybara_subtitles.srt"
+video_subtitled_path = "/app/results/capybara_subtitled.mp4"
 
 #wait for the video to be released
 while not os.path.exists("/app/tmp/langident_finish.txt"):

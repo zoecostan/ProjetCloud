@@ -4,6 +4,7 @@ from typing import Optional
 import moviepy.editor as mp
 import speech_recognition as sr
 import os
+import json
 import time
 
 class AudioPod:
@@ -28,17 +29,20 @@ class AudioPod:
     
     def get_lang(self, metadata_filename: str) -> str:
         lang = detect(self.transcribe_audio())
-        with open(metadata_filename, "a") as f:
-            f.write(f"Fichier audio : {self.audio_path}\n")
-            f.write(f"Langage : {lang}")
+
+        data = f"\"langage\": {list(lang)}"
+
+        with open(metadata_filename, "a") as json_file:
+            json.dump(data, json_file, indent=6, separators=(",", ": "))            
+
         with open("/app/tmp/langident_finish.txt", "w") as indicator_file:
             indicator_file.write("Langident finished.")
         return lang
 
 
-video_path = "/app/results/video1_resized.mp4"
-audio_path = "/app/results/video1_audio.wav"
-metadata_path = "/app/results/metadata1.txt"
+video_path = "/app/results/capybara_resized.mp4"
+audio_path = "/app/results/capybara_audio.wav"
+metadata_path = "/app/results/metadata.json"
 
 #wait for the video to be released
 while not os.path.exists("/app/tmp/downscale_finish.txt"):

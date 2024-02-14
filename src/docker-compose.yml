@@ -36,4 +36,12 @@ services:
     depends_on:
       - subtitle_pod
 
-
+  push_aws:
+    build: ./push_aws
+    volumes:
+      - ./results:/app/results
+      - ./tmp:/app/tmp
+      - ~/.aws:/root/.aws
+      
+    depends_on:
+      - animal_detect_pod

@@ -12,8 +12,8 @@ class DownscalePod:
         with open("/app/tmp/downscale_finish.txt", "w") as indicator_file:
             indicator_file.write("Downscale finished.")
 
-video_path = "/app/ressources/video1.mp4"
-video_path_resized = "/app/results/video1_resized.mp4"
+video_path = "/app/ressources/capybara.mp4"
+video_path_resized = "/app/results/capybara_resized.mp4"
 downpod1 = DownscalePod(video_path)
 downpod1.downscale(360, video_path_resized)
 
