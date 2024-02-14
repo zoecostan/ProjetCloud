@@ -24,7 +24,12 @@ align-items: center;
 justify-content: center;
 cursor: pointer;
 padding: 0px 20px 0px 20px;
-border-radius: 10px;
+border-radius: 15px;
+
+p {
+  font-size: 20px;
+  font-weight: 600;
+}
 }
 
 .gogoback:hover {
@@ -71,7 +76,17 @@ gap: 20px;
   padding: 0px 40px 0px 40px;
   background-color: white;
   border-radius: 15px;
-  border: 1px solid #f1f3f1;  /* Ajout d'une bordure solide */
+  border: 1px solid #f1f3f1;
+}
 
+.step2-langue {
+margin-bottom: 20px;
 
+p {
+  font-size: 20px;
+
+  span {
+    font-weight: 600;
+  }
+}
 }
