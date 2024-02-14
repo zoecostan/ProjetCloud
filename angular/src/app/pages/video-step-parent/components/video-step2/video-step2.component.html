@@ -1,37 +1,14 @@
 <div class="app-video-step2">
-  <div class="step2-video-viewer">
-    <div class="step2-video-viewer-title">
-      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-        <div class="step2-back-button" (click)="goBack()">
-          <img src="../../../../assets/arrow-right.svg">
-          <p>Retour</p>
-        </div>
-      </div>
-
-      <div class="step2-video-viewer-title-text">
-        <p>{{object.title}}</p>
-      </div>
-      <div style="width: 100%">
-
-      </div>
-
-    </div>
-    <div class="step2-video-viewer-video">
-      <img [src]="object.urlMiniature" alt="{{ object.title }}">
-    </div>
+  <div class="video-step2-header">
+    <p class="step2-header-title">{{ data[indexOfSelectedFolder].path }}</p>
   </div>
-  <div class="step2-video-data">
-    <div class="step2-video-data-title">
-      <p>Analyse.</p>
-    </div>
-    <div class="step2-video-data-content">
-      <p>Durée: </p>
-    </div>
-    <div class="step2-video-data-content">
-      <p>Langue: </p>
-    </div>
-    <div class="step2-video-data-content">
-      <p>Animaux: </p>
+  <div class="video-step2-content">
+    <video controls>
+      <source [src]="videoUrl" type="video/mp4">
+      Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    <div class="step2-analyse">
+      <p class="step2-analyse-title">Analyse.</p>
     </div>
   </div>
 </div>
