@@ -66,14 +66,19 @@ with open(log_file_path, "r") as log_file:
 
 # Créer le contenu du fichier JSON si au moins une des trois espèces est détectée
 if detected_animals:
-    data = f"\"animaux\": {list(detected_animals)}"
+    data = {"animaux": list(detected_animals)}
 
-    # Chemin vers le fichier JSON généré
+    json_list = []
     json_file_path = "/app/results/metadata.json"
 
-    # Enregistrer les données dans le fichier JSON
-    with open(json_file_path, "a") as json_file:
-        json.dump(data, json_file, indent=6, separators=(",", ": "))
+    with open(json_file_path, "r") as jsf:
+        json_list = json.load(jsf)
+
+    json_list.update(data)
+
+    # Write updated JSON data
+    with open(json_file_path, "w") as json_file:
+        json.dump(json_list, json_file, indent=6, separators=(",", ": "))
 
 # Supprimer le fichier de logs
 os.remove("/app/tmp/logs.txt")
