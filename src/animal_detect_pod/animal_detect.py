@@ -8,8 +8,8 @@ def generate_video_with_audio(video_path, video_detection_path):
     # Commande à exécuter pour générer la vidéo sans audio
     command = [
         "python",                    # Exécuter le programme Python
-        "./yolov5/detect.py",                 # Nom du script à exécuter
-        "--weights", "./yolov5/runs/train/exp/weights/last.pt",  # Argument --weights avec le chemin du fichier poids
+        "/app/yolov5/detect.py",                 # Nom du script à exécuter
+        "--weights", "/app/yolov5/runs/train/exp/weights/last.pt",  # Argument --weights avec le chemin du fichier poids
         "--img", "640",              # Argument --img avec la valeur 640
         "--conf", "0.6",             # Argument --conf avec la valeur 0.5
         "--source", "${video_path}"  # Argument --source avec le chemin du fichier vidéo source
@@ -19,7 +19,7 @@ def generate_video_with_audio(video_path, video_detection_path):
     subprocess.run(command)
 
     # Chemin vers le dossier contenant la vidéo générée
-    video_folder_path = "./yolov5/runs/detect/exp"
+    video_folder_path = "/app/yolov5/runs/detect/exp"
 
     # Chemin vers la vidéo générée
     video_generee_path = video_folder_path + "/video.mp4"
@@ -55,6 +55,8 @@ while not os.path.exists("/app/tmp/subtitle_finish.txt"):
 os.remove("/app/tmp/subtitle_finish.txt")
 
 # Appeler la fonction pour générer la vidéo avec l'audio
-video_path = "./results/video1_subtitled.mp4"
-video_detection_path = "./results/video1_detection.mp4"
+video_path = "/app/results/video1_subtitled.mp4"
+video_detection_path = "/app/results/video1_detection.mp4"
 generate_video_with_audio(video_path, video_detection_path)
+with open("/app/tmp/animalDetect_finish.txt", "w") as indicator_file:
+    indicator_file.write("AnimalDetect finished.")

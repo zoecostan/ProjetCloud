@@ -9,6 +9,7 @@ COPY requirements.txt .
 
 # Install the Python dependencies
 RUN pip install -r requirements.txt
+RUN apt-get update && apt-get install libgl1 libglib2.0-0 -y
 
 COPY animal_detect.py .
 
