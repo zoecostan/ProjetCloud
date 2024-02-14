@@ -30,9 +30,11 @@ class AudioPod:
     def get_lang(self, metadata_filename: str) -> str:
         lang = detect(self.transcribe_audio())
 
-        data = f"\"langage\": {list(lang)}"
+        data = {
+                "langage": lang
+            }
 
-        with open(metadata_filename, "a") as json_file:
+        with open(metadata_filename, "w") as json_file:
             json.dump(data, json_file, indent=6, separators=(",", ": "))            
 
         with open("/app/tmp/langident_finish.txt", "w") as indicator_file:
