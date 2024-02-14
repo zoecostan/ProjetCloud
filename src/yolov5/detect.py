@@ -34,6 +34,16 @@ import os
 import platform
 import sys
 from pathlib import Path
+import logging
+
+# Configurer le logger
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('/app/tmp/logs.txt'),  # Gestionnaire pour enregistrer les logs dans un fichier
+    ]
+)
 
 import torch
 
@@ -252,6 +262,7 @@ def run(
 
         # Print time (inference-only)
         LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
+        logging.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
 
     # Print results
     t = tuple(x.t / seen * 1e3 for x in dt)  # speeds per image
