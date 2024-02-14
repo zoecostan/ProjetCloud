@@ -91,7 +91,7 @@ Pour effectuer la détection d'animaux sur les vidéos, nous avons utilisé l'al
 - 2 : détection grâce au script detection.py de YOLOv5
 
 - 3 : génération de la vidéo avec son et génération d'un JSON récapitulant les animaux détectés dans la vidéo
-- 
+  
 ## AWS Push
 
 ## AWS S3
