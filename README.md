@@ -2,7 +2,9 @@
 
 Projet Cloud ESIR3 - Marine Hilliou, Théo Gravec, Thomas Benalouane, Zoé Costan
 
-Une vidéo démonstration est disponible au lien suivant : @TODO
+Une vidéo démonstration est disponible au lien suivant :
+
+https://youtu.be/iOOhlNhDuFI
 
 # Description
 
@@ -54,7 +56,8 @@ Notre projet suit l'infrastructure du schéma suivant :
 
 ## Docker
 
-@TODO COMMENT LE PROF PEUT TESTER ?
+@TODO
+
 Pour réaliser ce projet, nous avons utilisé Docker pour créer différents conteneurs pour chaque pod d'analyse de la vidéo.
 Ces conteneurs seront utiles pour réaliser la pipeline de traitement de la vidéo.
 On a donc créer 5 conteneurs pour chaque pod, contenant chacun le script pour réaliser le traitement, un fichier Dockerfile qui créé un conteneur et un fichier requirements contenant les différentes librairies nécessaires au lancement des scripts python : 
