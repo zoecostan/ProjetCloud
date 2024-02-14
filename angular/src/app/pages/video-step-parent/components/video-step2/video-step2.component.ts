@@ -54,9 +54,9 @@ export class VideoStep2Component implements OnInit {
         this.httpClient.get(jsonFileUrl).subscribe(
           (data: any) => {
             this.jsonOfData = data;
-            if(this.jsonOfData['langue'] == 'fr') this.jsonOfData['langue'] = 'français';
-            if(this.jsonOfData['langue'] == 'en') this.jsonOfData['langue'] = 'English';
-            if(this.jsonOfData['langue'] == 'es') this.jsonOfData['langue'] = 'Espagnol';
+            if(this.jsonOfData['langage'] == 'fr') this.jsonOfData['langage'] = 'français';
+            if(this.jsonOfData['langage'] == 'en') this.jsonOfData['langage'] = 'English';
+            if(this.jsonOfData['langage'] == 'es') this.jsonOfData['langage'] = 'Espagnol';
 
             console.log(this.jsonOfData);
 

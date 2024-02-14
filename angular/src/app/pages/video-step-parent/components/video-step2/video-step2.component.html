@@ -16,7 +16,7 @@
     <div class="step2-analyse">
       <p class="step2-analyse-title">Analyse.</p>
       <div class="step2-langue">
-        <p><span>Langue :</span> {{ jsonOfData['langue'] }}</p>
+        <p><span>Langue :</span> {{ jsonOfData['langage'] }}</p>
       </div>
       <div class="step2-analyse-all-cards">
         <div *ngFor="let animal of jsonOfData['animaux']" class="step2-analyse-card">
@@ -24,6 +24,5 @@
         </div>
       </div>
     </div>
-    <div style="height: 200px; width: 5px;"></div>
   </div>
 </div>
