@@ -1,4 +1,5 @@
 import subprocess
+import json
 from moviepy.editor import VideoFileClip
 import shutil
 import os
@@ -53,6 +54,37 @@ while not os.path.exists("/app/tmp/subtitle_finish.txt"):
 
 #delete the file if it exists
 os.remove("/app/tmp/subtitle_finish.txt")
+
+# Analyser les logs pour extraire les animaux détectés
+log_file_path = "/app/tmp/logs.txt"
+detected_animals = set()  # Utiliser un ensemble pour éviter les doublons
+
+
+with open(log_file_path, "r") as log_file:
+    for line in log_file:
+        if "chat" in line.lower():
+            detected_animals.add("chat")
+        if "capybara" in line.lower():
+            detected_animals.add("capybara")
+        if "leopard" in line.lower():
+            detected_animals.add("leopard")
+
+# Créer le contenu du fichier JSON si au moins une des trois espèces est détectée
+if detected_animals:
+    data = {
+        "Animaux": list(detected_animals)
+    }
+
+    # Chemin vers le fichier JSON généré
+    json_file_path = "detected_animals.json"
+
+    # Enregistrer les données dans le fichier JSON
+    with open(json_file_path, "w") as json_file:
+        json.dump(data, json_file, indent=6, separators=(",", ": "))
+
+
+# Supprimer le fichier de logs
+os.remove(log_file_path)
 
 # Appeler la fonction pour générer la vidéo avec l'audio
 video_path = "/app/results/video1_subtitled.mp4"

@@ -8,22 +8,22 @@ def generate_video_with_audio():
     # Commande à exécuter pour générer la vidéo sans audio
     command = [
         "python",
-        "../yolov5/detect.py",
-        "--weights", "../yolov5/runs/train/exp/weights/last.pt",
+        "./yolov5/detect.py",
+        "--weights", "./yolov5/runs/train/exp/weights/last.pt",
         "--img", "640",
         "--conf", "0.6",
-        "--source", "../ressources/Capybara.mp4"
+        "--source", "./ressources/Capybara.mp4"
     ]
     subprocess.run(command)
 
     # Chemin vers la vidéo générée
-    video_generee_path = "../yolov5/runs/detect/exp/Capybara.mp4"
+    video_generee_path = "./yolov5/runs/detect/exp/Capybara.mp4"
 
     # Charger la vidéo générée
     video_generee = VideoFileClip(video_generee_path)
 
     # Charger la vidéo d'origine
-    video_origine = VideoFileClip("../ressources/Capybara.mp4")
+    video_origine = VideoFileClip("./ressources/Capybara.mp4")
 
     # Extraire et ajouter l'audio de la vidéo d'origine à la vidéo générée
     video_generee = video_generee.set_audio(video_origine.audio)
@@ -36,13 +36,13 @@ def generate_video_with_audio():
     video_origine.close()
 
     # Supprimer le dossier et son contenu
-    shutil.rmtree("../yolov5/runs/detect/exp")
+    shutil.rmtree("./yolov5/runs/detect/exp")
 
     # Supprimer le fichier de logs
     os.remove("logs.txt")
 
 # Analyser les logs pour extraire les animaux détectés
-log_file_path = "logs.txt"
+log_file_path = "./logs.txt"
 detected_animals = set()  # Utiliser un ensemble pour éviter les doublons
 
 with open(log_file_path, "r") as log_file:
