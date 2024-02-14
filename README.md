@@ -72,6 +72,26 @@ Le site web est disponible au lien suivant :
 
 ## Detection d'animaux
 
+Pour effectuer la détection d'animaux sur les vidéos, nous avons utilisé l'algorithme YOLO version 5 (YOLOv5), un modèle de détection d'objets qui contient un dépôt GitHub. 
+
+### Entrainement du modèle
+
+- 1 : création de dossiers contenant des images diverses des animaux que nous souhaitons pouvoir reconnaître sur les vidéos (plus le dossier contient d'images plus les résultats seront précis)
+  
+- 2 : utilisation du site makesense.ai afin d'annoter les images selon les animaux qu'elles contiennent et export de ces annotations au format YOLO
+
+- 3 : clônage et utilisation du dépôt GitHub YOLOv5
+  
+- 4 : ajustement des paramètres et entrainement avec le script train.py de YOLOv5
+
+### Détection d'animaux
+
+- 1 : ajustement des paramètres, mention de la vidéo qui doit faire objet de détection
+
+- 2 : détection grâce au script detection.py de YOLOv5
+
+- 3 : génération de la vidéo avec son et génération d'un JSON récapitulant les animaux détectés dans la vidéo
+- 
 ## AWS Push
 
 ## AWS S3
