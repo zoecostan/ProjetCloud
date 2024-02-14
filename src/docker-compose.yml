@@ -32,6 +32,7 @@ services:
       - ./ressources:/app/ressources
       - ./results:/app/results
       - ./tmp:/app/tmp
+      - ./yolov5:/app/yolov5
     depends_on:
       - subtitle_pod
 
