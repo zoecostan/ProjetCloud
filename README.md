@@ -10,10 +10,10 @@ Une vidéo démonstration est disponible au lien suivant :
 ## General
 
 Le projet permet de traiter une vidéo :
-- La vidéo est compressé
+- La vidéo est compressée
 - La langue de la vidéo est détectée
-- Les sous-titres corespondant sont ajoutés sur la vidéo
-- Les animaux présent sur la vidéo sont détectés et affichés sur la vidéo
+- Les sous-titres corespondants sont ajoutés sur la vidéo
+- Les animaux présents sur la vidéo sont détectés et affichés sur la vidéo
 
 A partir d'une vidéo original, on créer alors :
 - Une vidéo avec les sous-titres et la detection d'animaux 
