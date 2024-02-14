@@ -76,4 +76,14 @@ Le site web est disponible au lien suivant :
 
 ## AWS S3
 
+Nous avons crée 2 buckets dans AWS S3 :
+- Le bucket "capydatastorage", qui contient toutes les vidéos et les metadonnées
+- Le bucket "capyangularstorage", qui contient le site web accessible par le client
+
 ## Angular
+
+Le site web est développé en Angular.
+
+Nous utilisons la librairie AWS "aws-sdk" pour se connecter à AWS et récupérer tout le contenu du Bucket "capydatastorage".
+Une fois le contenu entier du Bucket récupéré, on en déduis alors pour chaque dossier l'url de sa vidéo et de son fichier JSON.
+Pour récuperer le contenu du fichier JSON, on utilise le service HTTP et la méthode GET sur l'url du JSON.
