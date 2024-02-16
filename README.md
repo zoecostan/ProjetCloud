@@ -111,6 +111,8 @@ Pour effectuer la détection d'animaux sur les vidéos, nous avons utilisé l'al
   
 ## AWS Push
 
+Pour téléverser les vidéos après traitement, nous avons mis en place un dernier script qui utilise la librairie Boto3. En précisant le nom du bucket et le chemin des fichiers, nous pouvons les uploader directement sur AWS dans un bucket S3, en utilisant une fonction fournie par la bibliothèque. Pour exécuter cette opération, il est également nécessaire de disposer d'un fichier contenant les informations d'identification AWS à la racine du projet.
+
 ## AWS S3
 
 Nous avons crée 2 buckets dans AWS S3 :
