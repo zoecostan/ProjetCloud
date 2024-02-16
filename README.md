@@ -58,18 +58,16 @@ Notre projet suit l'infrastructure du schéma suivant :
 
 @TODO
 
-Pour réaliser ce projet, nous avons utilisé Docker pour créer différents conteneurs pour chaque pod d'analyse de la vidéo.
-Ces conteneurs seront utiles pour réaliser la pipeline de traitement de la vidéo.
-On a donc créer 5 conteneurs pour chaque pod, contenant chacun le script pour réaliser le traitement, un fichier Dockerfile qui créé un conteneur et un fichier requirements contenant les différentes librairies nécessaires au lancement des scripts python : 
-    - Downscale : ce conteneur se charge de compresser la vidéo
-    - LangIdent : ce conteneur se charge d'identifier la langue
-    - Subtitle : ce conteneur créé les sous-titres et les ajoute directement sur la vidéo
-    - AnimalDetect : ce conteneur détecte les animaux présents dans la vidéo et les identifie directement dans la vidéo
-    - PushAWS : ce conteneur se charge de mettre la vidéo créée avec les différents traitement dans le bucket AWS
+Pour ce projet, nous avons employé Docker afin de créer divers conteneurs pour chaque étape d'analyse de la vidéo. Ces conteneurs serviront à mettre en place la séquence de traitement de la vidéo. Nous avons ainsi mis en place cinq conteneurs pour chaque étape, contenant chacun le script nécessaire à la réalisation du traitement, un fichier Dockerfile pour la création du conteneur, et un fichier requirements contenant les différentes bibliothèques requises pour exécuter les scripts Python :
+- Downscale: Ce conteneur comprime la vidéo.
+- LangIdent: Ce conteneur identifie la langue de la vidéo.
+- Subtitle: Ce conteneur crée et ajoute des sous-titres directement sur la vidéo.
+- AnimalDetect: Ce conteneur détecte les animaux présents dans la vidéo et les identifie.
+- PushAWS: Ce conteneur est chargé de transférer la vidéo traitée avec les différents processus dans le bucket AWS.
 
-Pour finir, pour lancer la pipeline de ces conteneurs, on a créé un docker compose qui se charge de lancer les pods les uns à la suite des autres.
+Enfin, pour exécuter la séquence de ces conteneurs, nous avons créé un fichier Docker Compose qui se charge de lancer les pods les uns après les autres.
 
-Pour tester, 
+Pour tester le système, il suffit d'insérer la vidéo souhaitée dans le dossier src/ressources, puis de lancer Docker Compose avec la commande "docker compose up --build". Une fois le processus terminé, la vidéo finale devrait être disponible dans le dossier src/results/nomVideo_detection.mp4.
 
 ## Site web
 
