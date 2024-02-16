@@ -56,11 +56,9 @@ Notre projet suit l'infrastructure du schéma suivant :
 
 ## Docker
 
-@TODO
-
-Pour ce projet, nous avons employé Docker afin de créer divers conteneurs pour chaque étape d'analyse de la vidéo. Ces conteneurs serviront à mettre en place la séquence de traitement de la vidéo. Nous avons ainsi mis en place cinq conteneurs pour chaque étape, contenant chacun le script nécessaire à la réalisation du traitement, un fichier Dockerfile pour la création du conteneur, et un fichier requirements contenant les différentes bibliothèques requises pour exécuter les scripts Python :
-- Downscale: Ce conteneur comprime la vidéo.
-- LangIdent: Ce conteneur identifie la langue de la vidéo.
+Pour ce projet, nous avons employé Docker afin de créer divers conteneurs pour chaque étape d'analyse de la vidéo. Ces conteneurs serviront à mettre en place la séquence de traitement de la vidéo. Nous avons ainsi mis en place cinq conteneurs pour chaque étape, contenant chacun un script nécessaire à la réalisation du traitement, un fichier Dockerfile pour la création du conteneur, et un fichier requirements contenant les différentes bibliothèques requises pour exécuter les scripts Python :
+- Downscale: Ce conteneur comprime la vidéo pour réduire sa taille.
+- LangIdent: Ce conteneur identifie le langage de la vidéo.
 - Subtitle: Ce conteneur crée et ajoute des sous-titres directement sur la vidéo.
 - AnimalDetect: Ce conteneur détecte les animaux présents dans la vidéo et les identifie.
 - PushAWS: Ce conteneur est chargé de transférer la vidéo traitée avec les différents processus dans le bucket AWS.
@@ -79,9 +77,15 @@ http://capyangularstorage.s3-website.eu-north-1.amazonaws.com/
 
 ## Compression
 
+Pour effectuer la compression d'une vidéo, nous avons utilisé la librairie MoviePy de Python, qui fournit directement une fonction permettant de réduire la taille d'une vidéo.
+
 ## Langue
 
+Pour identifier la langue, nous avons également utilisé la librairie MoviePy. Dans un premier temps, nous avons extrait l'audio de la vidéo afin d'obtenir le texte. Ensuite, nous avons employé les bibliothèques SpeechRecognition et Whisper pour reconnaître la langue.
+
 ## Sous-titres
+
+Pour l'ajout des sous-titres à la vidéo, nous avons réalisé le même traitement que pour l'identification de la langue, consistant à extraire le texte à partir de l'audio de la vidéo. Ensuite, nous avons segmenté ce texte en plusieurs parties, avec une fréquence de découpe toutes les 4 secondes, afin de pouvoir l'afficher correctement sur la vidéo. Pour intégrer ces sous-titres directement à la vidéo, nous avons utilisé la bibliothèque FFMEP, qui génère une nouvelle vidéo combinant la vidéo d'origine et notre fichier de sous-titres créé précédemment.
 
 ## Detection d'animaux
 
